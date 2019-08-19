@@ -9,7 +9,7 @@ module.exports.run = async (bot, message, args, con, guild_id, log_file) => {
 	let target = message.author;
 
 	//Get list of roles the target has
-	let target_roles = guild.members.find(m => m.id = target.id).roles.map(r => r.name);
+	let target_roles = guild.members.find(m => m.id === target.id).roles.map(r => r.name);
 
 	// ########## Function 1 ##########  
 	// !mcmtip 
