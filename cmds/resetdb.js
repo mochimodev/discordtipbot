@@ -12,7 +12,7 @@ module.exports.run = async (bot, message, args, con, guild_id, log_file) => {
 	//Check if user has admin permissions to execute (only stackoverflo with rank "Satochi" should be able to run this)
 	let target = message.author;
 
-	let target_roles = guild.members.find(m => m.id = target.id).roles.map(r => r.name);
+	let target_roles = guild.members.find(m => m.id === target.id).roles.map(r => r.name);
 	console.log(`Target roles: ${target_roles}`);
 
 	if (!target_roles.includes("Satochi")) {
