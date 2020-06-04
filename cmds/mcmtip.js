@@ -3,13 +3,14 @@ const fs = require("fs");
 
 module.exports.run = async (bot, message, args, con, guild_id, log_file) => {
     //Filter channel spam
+    var bot_spam_channel = bot.channels.get("461285051770863626")
     if (args.length != 2 && message.channel.name !== "bot-spam") {
-        message.reply("Please use the #bot-spam channel for all general commands.")
-		.then(msg => {
-			msg.delete(5000)
-		})
-		.catch();
-		return;
+        message.reply(`please use the ${bot_spam_channel} for all general commands.`)
+        .then(msg => {
+            msg.delete(5000)
+        })
+        .catch();
+        return;
     }
 
 	//Get guild
